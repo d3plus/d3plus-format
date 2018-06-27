@@ -32,4 +32,4 @@ This is a global function.
 
 
 
-###### <sub>Documentation generated on Tue, 05 Jun 2018 16:51:58 GMT</sub>
+###### <sub>Documentation generated on Wed, 27 Jun 2018 16:53:20 GMT</sub>
