@@ -40,6 +40,7 @@
   },
   "module": "es/index",
   "jsnext:main": "es/index",
+  "sideEffects": false,
   "files": [
     "bin",
     "build/d3plus-format.js",
