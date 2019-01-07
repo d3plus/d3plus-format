@@ -8,12 +8,7 @@ import {format} from "d3-format";
 */
 export default function(n) {
   if (typeof n !== "number") return "N/A";
-  let isNegative;
-  if (n < 0) {
-    isNegative = true;
-    n *= -1;
-  }
-  const length = n.toString().split(".")[0].length;
+  const length = n.toString().split(".")[0].replace("-", "").length;
   let val;
   if (n === 0) val = "0";
   else if (length >= 3) {
@@ -29,8 +24,6 @@ export default function(n) {
   else if (length === 3) val = format(",f")(n);
   else if (n < 1 && n > -1) val = format(".2g")(n);
   else val = format(".3g")(n);
-
-  if (isNegative) val = `-${val}`;
 
   return val
     .replace(/(\.[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
