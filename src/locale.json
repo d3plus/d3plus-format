@@ -1,0 +1,22 @@
+{
+  "en": {
+    "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
+    "delimiters": {
+      "thousands": " ",
+      "decimal": ","
+    },
+    "currency": {
+      "symbol": "$"
+    }
+  },
+  "et": {
+    "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "tuh", "mln", "mld", "trl", "q", "Q", "Z", "Y"],
+    "delimiters": {
+      "thousands": " ",
+      "decimal": ","
+    },
+    "currency": {
+      "symbol": "€"
+    }
+  }
+}
