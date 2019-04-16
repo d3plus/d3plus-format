@@ -32,7 +32,7 @@
       "symbol": "€"
     }
   },
-  "es-LA": {
+  "es-CL": {
     "separator": "",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
@@ -43,7 +43,7 @@
       "symbol": "$"
     }
   },
-  "et": {
+  "et-EE": {
     "separator": " ",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "tuh", "mln", "mld", "trl", "q", "Q", "Z", "Y"],
     "delimiters": {
@@ -54,7 +54,7 @@
       "symbol": "€"
     }
   },
-  "fr": {
+  "fr-FR": {
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "m", "b", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": " ",
