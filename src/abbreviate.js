@@ -1,4 +1,4 @@
-import {format} from "d3-format";
+import {formatLocale} from "d3-format";
 import defaultLocale from "./locale.json";
 
 const round = (x, n) => 
@@ -47,17 +47,24 @@ export default function(n, locale = "en-US") {
 
   const separator = localeConfig.separator || "";
 
+  const d3plusFormatLocale = formatLocale({
+    currency: localeConfig.currency || ["$", ""],
+    decimal: localeConfig.delimiters.decimal || ".",
+    grouping: localeConfig.grouping || [3],
+    thousands: localeConfig.delimiters.thousands || ","
+  });
+
   let val;
   if (n === 0) val = "0";
   else if (length >= 3) {
-    const f = formatSuffix(format(".3r")(n), 2, suffixes);
+    const f = formatSuffix(d3plusFormatLocale.format(".3r")(n), 2, suffixes);
     const num = f.number;
     const char = f.symbol;
     val = `${parseFloat(num)}${separator}${char}`;
   }
-  else if (length === 3) val = format(",f")(n);
-  else if (n < 1 && n > -1) val = format(".2g")(n);
-  else val = format(".3g")(n);
+  else if (length === 3) val = d3plusFormatLocale.format(",f")(n);
+  else if (n < 1 && n > -1) val = d3plusFormatLocale.format(".2g")(n);
+  else val = d3plusFormatLocale.format(".3g")(n);
 
   return val
     .replace(/(\.[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
