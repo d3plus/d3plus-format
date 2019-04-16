@@ -34,24 +34,24 @@ function parseSuffixes(d, i) {
     @function formatAbbreviate
     @desc Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
     @param {Number|String} n The number to be formatted.
-    @param {String} locale The locale to be formatted.
+    @param {Object|String} locale The locale config to be used. If *value* is an object, the function will format the numbers according the object. The object must include `suffixes`, `delimiter` and `currency` properties.
     @returns {String}
 */
-export default function(n, locale = "et") {
-  // isFinite
-  if (typeof n !== "number") n *= 1;
-  const specifier = "s";
-  const suffixes = defaultLocale[locale].suffixes.map(parseSuffixes);
+export default function(n, locale = "en-US") {
+  if (isFinite(n) && !isNaN(n)) n *= 1;
+  else return "N/A";
 
-  const length = n.toString().split(".")[0].replace("-", "").length;
+  const length = n.toString().split(".")[0].replace("-", "").length,
+        localeConfig = typeof locale === "object" ? locale : defaultLocale[locale] || defaultLocale["en-US"],
+        suffixes = localeConfig.suffixes.map(parseSuffixes);
+
   let val;
   if (n === 0) val = "0";
   else if (length >= 3) {
     const f = formatSuffix(n, 2, suffixes);
     const num = f.number;
     const char = f.symbol;
-    const prefix = specifier === "c" ? "$" : "";
-    val = `${prefix}${parseFloat(num)}${char}`;
+    val = `${parseFloat(num)}${char}`;
   }
   else if (length === 3) val = format(",f")(n);
   else if (n < 1 && n > -1) val = format(".2g")(n);
