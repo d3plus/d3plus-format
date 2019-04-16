@@ -50,7 +50,7 @@ export default function(n, locale = "en-US") {
   let val;
   if (n === 0) val = "0";
   else if (length >= 3) {
-    const f = formatSuffix(n, 2, suffixes);
+    const f = formatSuffix(format(".3r")(n), 2, suffixes);
     const num = f.number;
     const char = f.symbol;
     val = `${parseFloat(num)}${separator}${char}`;
