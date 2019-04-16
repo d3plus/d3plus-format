@@ -1,8 +1,38 @@
 {
-  "en": {
+  "en-GB": {
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
-      "thousands": " ",
+      "thousands": ",",
+      "decimal": "."
+    },
+    "currency": {
+      "symbol": "£"
+    }
+  },
+  "en-US": {
+    "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
+    "delimiters": {
+      "thousands": ",",
+      "decimal": "."
+    },
+    "currency": {
+      "symbol": "$"
+    }
+  },
+  "es-ES": {
+    "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "mm", "b", "t", "q", "Q", "Z", "Y"],
+    "delimiters": {
+      "thousands": ".",
+      "decimal": ","
+    },
+    "currency": {
+      "symbol": "€"
+    }
+  },
+  "es-LA": {
+    "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
+    "delimiters": {
+      "thousands": ".",
       "decimal": ","
     },
     "currency": {
@@ -11,6 +41,16 @@
   },
   "et": {
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "tuh", "mln", "mld", "trl", "q", "Q", "Z", "Y"],
+    "delimiters": {
+      "thousands": " ",
+      "decimal": ","
+    },
+    "currency": {
+      "symbol": "€"
+    }
+  },
+  "fr": {
+    "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "m", "b", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": " ",
       "decimal": ","
