@@ -1,5 +1,6 @@
 {
   "en-GB": {
+    "separator": "",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": ",",
@@ -10,6 +11,7 @@
     }
   },
   "en-US": {
+    "separator": "",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": ",",
@@ -20,6 +22,7 @@
     }
   },
   "es-ES": {
+    "separator": "",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "mm", "b", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": ".",
@@ -30,6 +33,7 @@
     }
   },
   "es-LA": {
+    "separator": "",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": ".",
@@ -40,6 +44,7 @@
     }
   },
   "et": {
+    "separator": " ",
     "suffixes": ["y", "z", "a", "f", "p", "n", "µ", "m", "", "tuh", "mln", "mld", "trl", "q", "Q", "Z", "Y"],
     "delimiters": {
       "thousands": " ",
