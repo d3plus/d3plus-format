@@ -38,7 +38,7 @@ function parseSuffixes(d, i) {
     @returns {String}
 */
 export default function(n, locale = "en-US") {
-  if (isFinite(n) && !isNaN(n)) n *= 1;
+  if (isFinite(n)) n *= 1;
   else return "N/A";
 
   const length = n.toString().split(".")[0].replace("-", "").length,
