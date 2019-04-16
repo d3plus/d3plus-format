@@ -45,13 +45,15 @@ export default function(n, locale = "en-US") {
         localeConfig = typeof locale === "object" ? locale : defaultLocale[locale] || defaultLocale["en-US"],
         suffixes = localeConfig.suffixes.map(parseSuffixes);
 
+  const separator = localeConfig.separator || "";
+
   let val;
   if (n === 0) val = "0";
   else if (length >= 3) {
     const f = formatSuffix(n, 2, suffixes);
     const num = f.number;
     const char = f.symbol;
-    val = `${parseFloat(num)}${char}`;
+    val = `${parseFloat(num)}${separator}${char}`;
   }
   else if (length === 3) val = format(",f")(n);
   else if (n < 1 && n > -1) val = format(".2g")(n);
