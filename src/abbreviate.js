@@ -4,7 +4,9 @@ import defaultLocale from "./locale";
 const round = (x, n) =>
   parseFloat(Math.round(x * Math.pow(10, n)) / Math.pow(10, n)).toFixed(n);
 
-/** */
+/**
+ * @private
+*/
 function formatSuffix(value, precision, suffixes) {
   let i = 0;
   if (value) {
@@ -20,7 +22,9 @@ function formatSuffix(value, precision, suffixes) {
   };
 }
 
-/** */
+/**
+ * @private
+*/
 function parseSuffixes(d, i) {
   const k = Math.pow(10, Math.abs(8 - i) * 3);
   return {
