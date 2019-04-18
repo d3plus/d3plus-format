@@ -45,11 +45,12 @@ export default function(n, locale = "en-US") {
         localeConfig = typeof locale === "object" ? locale : defaultLocale[locale] || defaultLocale["en-US"],
         suffixes = localeConfig.suffixes.map(parseSuffixes);
 
-  const separator = localeConfig.separator || "";
+  const decimal = localeConfig.delimiters.decimal || ".",
+        separator = localeConfig.separator || "";
 
   const d3plusFormatLocale = formatLocale({
     currency: localeConfig.currency || ["$", ""],
-    decimal: localeConfig.delimiters.decimal || ".",
+    decimal,
     grouping: localeConfig.grouping || [3],
     thousands: localeConfig.delimiters.thousands || ","
   });
@@ -58,9 +59,9 @@ export default function(n, locale = "en-US") {
   if (n === 0) val = "0";
   else if (length >= 3) {
     const f = formatSuffix(d3plusFormatLocale.format(".3r")(n), 2, suffixes);
-    const num = f.number;
+    const num = parseFloat(f.number).toString().replace(".", decimal);
     const char = f.symbol;
-    val = `${parseFloat(num)}${separator}${char}`;
+    val = `${num}${separator}${char}`;
   }
   else if (length === 3) val = d3plusFormatLocale.format(",f")(n);
   else if (n < 1 && n > -1) val = d3plusFormatLocale.format(".2g")(n);
