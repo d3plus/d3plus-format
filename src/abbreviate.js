@@ -1,7 +1,7 @@
 import {formatLocale} from "d3-format";
-import defaultLocale from "./locale.json";
+import defaultLocale from "./locale";
 
-const round = (x, n) => 
+const round = (x, n) =>
   parseFloat(Math.round(x * Math.pow(10, n)) / Math.pow(10, n)).toFixed(n);
 
 /** */
@@ -13,7 +13,7 @@ function formatSuffix(value, precision, suffixes) {
     i = Math.max(-24, Math.min(24, Math.floor((i - 1) / 3) * 3));
   }
   const d = suffixes[8 + i / 3];
-  
+
   return {
     number: round(d.scale(value), precision),
     symbol: d.symbol
