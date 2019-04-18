@@ -16,30 +16,12 @@ If you use NPM, run `npm install d3plus-format --save`. Otherwise, download the 
 ## API Reference
 
 ##### 
-* [formatSuffix](#formatSuffix)
-* [parseSuffixes](#parseSuffixes)
 * [formatAbbreviate](#formatAbbreviate) - Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
 
 ---
 
-<a name="formatSuffix"></a>
-#### d3plus.**formatSuffix**() [<>](https://github.com/d3plus/d3plus-format/blob/master/src/abbreviate.js#L8)
-
-
-This is a global function.
-
----
-
-<a name="parseSuffixes"></a>
-#### d3plus.**parseSuffixes**() [<>](https://github.com/d3plus/d3plus-format/blob/master/src/abbreviate.js#L24)
-
-
-This is a global function.
-
----
-
 <a name="formatAbbreviate"></a>
-#### d3plus.**formatAbbreviate**(n, locale) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/abbreviate.js#L33)
+#### d3plus.**formatAbbreviate**(n, locale) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/abbreviate.js#L37)
 
 Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
 
@@ -56,4 +38,4 @@ This is a global function.
 
 
 
-###### <sub>Documentation generated on Thu, 18 Apr 2019 14:12:12 GMT</sub>
+###### <sub>Documentation generated on Thu, 18 Apr 2019 14:13:54 GMT</sub>
