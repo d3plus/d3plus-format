@@ -20,8 +20,10 @@ test("abbreviate", assert => {
   assert.equal("1B",    abbreviate(1000000009), "large - removes trailing zeros and period");
   assert.equal("0.1",   abbreviate(0.1), "small - removes trailing zeros");
 
-  assert.equal("10 mln", abbreviate(10000000, "et-EE"), "estonian locale");
-  assert.equal("1mm",    abbreviate(1000000, "es-ES"), "spanish locale");
+  assert.equal("10 mln",   abbreviate(10000000, "et-EE"), "estonian locale");
+  assert.equal("1,23 trl", abbreviate(1234567890000, "et-EE"), "trillion in estonian");
+  assert.equal("1mm",      abbreviate(1000000, "es-ES"), "spanish locale");
+  assert.equal("1,23t",    abbreviate(1234567890000, "es-ES"), "trillion in spanish");
 
 });
 
