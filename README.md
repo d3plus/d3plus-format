@@ -56,4 +56,4 @@ This is a global function.
 
 
 
-###### <sub>Documentation generated on Thu, 18 Apr 2019 14:07:20 GMT</sub>
+###### <sub>Documentation generated on Thu, 18 Apr 2019 14:12:12 GMT</sub>
