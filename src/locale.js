@@ -41,13 +41,13 @@ export default {
   },
   "et-EE": {
     separator: " ",
-    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "tuh", "mln", "mld", "trl", "q", "Q", "Z", "Y"],
+    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "tuhat", "miljonit", "miljardit", "triljonit", "q", "Q", "Z", "Y"],
     grouping: [3],
     delimiters: {
       thousands: " ",
       decimal: ","
     },
-    currency: ["€", ""]
+    currency: ["", "eurot"]
   },
   "fr-FR": {
     suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "m", "b", "t", "q", "Q", "Z", "Y"],
