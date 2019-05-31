@@ -41,7 +41,7 @@ function parseSuffixes(d, i) {
     @param {Object|String} locale The locale config to be used. If *value* is an object, the function will format the numbers according the object. The object must include `suffixes`, `delimiter` and `currency` properties.
     @returns {String}
 */
-export default function(n, locale = "en-US", format = undefined) {
+export default function(n, locale = "en-US") {
   if (isFinite(n)) n *= 1;
   else return "N/A";
 
@@ -57,7 +57,7 @@ export default function(n, locale = "en-US", format = undefined) {
     currency: localeConfig.currency || ["$", ""],
     decimal,
     grouping: localeConfig.grouping || [3],
-    thousands: localeConfig.delimiters.thousands || ","
+    thousands
   });
 
   let val;
@@ -71,8 +71,6 @@ export default function(n, locale = "en-US", format = undefined) {
   else if (length === 3) val = d3plusFormatLocale.format(",f")(n);
   else if (n < 1 && n > -1) val = d3plusFormatLocale.format(".2g")(n);
   else val = d3plusFormatLocale.format(".3g")(n);
-
-  if (format && format === "%") val = `${d3plusFormatLocale.format(".2g")(n * 100)}%`;
 
   return val
     .replace(/(\.[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
