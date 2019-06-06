@@ -67,7 +67,7 @@ export default function(n, locale = "en-US", round = true) {
   }
   else if (length >= 3) {
     const f = formatSuffix(d3plusFormatLocale.format(".3r")(n), 2, suffixes);
-    const num = parseFloat(f.number).toString().replace(".", thousands);
+    const num = parseFloat(f.number).toString().replace(".", decimal);
     const char = f.symbol;
     val = `${num}${separator}${char}`;
   }
