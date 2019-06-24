@@ -25,8 +25,10 @@ test("abbreviate", assert => {
   assert.equal("1mm",      abbreviate(1000000, "es-ES"), "spanish locale");
   assert.equal("1,23t",    abbreviate(1234567890000, "es-ES"), "trillion in spanish");
 
-  assert.equal("1,000", abbreviate(1000, "en-US", false), "trillion in estonian");
-  assert.equal("1 000", abbreviate(1000, "et-EE", false), "trillion in estonian");
+  assert.equal("0.12", abbreviate(0.12, "en-US"), "decimal format in english");
+  assert.equal("0,12", abbreviate(0.12, "et-EE"), "decimal format in estonian");
+  assert.equal("1,000", abbreviate(1000, "en-US", ",.4r"), "trillion in english");
+  assert.equal("1 000", abbreviate(1000, "et-EE", ",.4r"), "trillion in estonian");
 
 });
 
