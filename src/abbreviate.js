@@ -41,7 +41,7 @@ function parseSuffixes(d, i) {
     @param {Object|String} locale The locale config to be used. If *value* is an object, the function will format the numbers according the object. The object must include `suffixes`, `delimiter` and `currency` properties.
     @returns {String}
 */
-export default function(n, locale = "en-US", round = true) {
+export default function(n, locale = "en-US", precision = undefined) {
   if (isFinite(n)) n *= 1;
   else return "N/A";
 
@@ -61,10 +61,8 @@ export default function(n, locale = "en-US", round = true) {
   });
 
   let val;
-  if (n === 0) val = "0";
-  else if (length >= 3 & !round) {
-    val = d3plusFormatLocale.format(`,.${length}r`)(n);
-  }
+  if (precision) val = d3plusFormatLocale.format(precision)(n);
+  else if (n === 0) val = "0";
   else if (length >= 3) {
     const f = formatSuffix(d3plusFormatLocale.format(".3r")(n), 2, suffixes);
     const num = parseFloat(f.number).toString().replace(".", decimal);
