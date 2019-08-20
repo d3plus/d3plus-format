@@ -45,6 +45,8 @@ export default function(n, locale = "en-US", precision = undefined) {
   if (isFinite(n)) n *= 1;
   else return "N/A";
 
+  const negative = n < 0;
+
   const length = n.toString().split(".")[0].replace("-", "").length,
         localeConfig = typeof locale === "object" ? locale : defaultLocale[locale] || defaultLocale["en-US"],
         suffixes = localeConfig.suffixes.map(parseSuffixes);
@@ -73,7 +75,7 @@ export default function(n, locale = "en-US", precision = undefined) {
   else if (n < 1 && n > -1) val = d3plusFormatLocale.format(".2g")(n);
   else val = d3plusFormatLocale.format(".3g")(n);
 
-  return val
+  return `${negative ? "-" : ""}${val}`
     .replace(/(\.[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
     .replace(/[.]$/g, ""); // removes any trailing decimal point
 }
