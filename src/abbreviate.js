@@ -75,7 +75,7 @@ export default function(n, locale = "en-US", precision = undefined) {
   else if (n < 1 && n > -1) val = d3plusFormatLocale.format(".2g")(n);
   else val = d3plusFormatLocale.format(".3g")(n);
 
-  return `${negative ? "-" : ""}${val}`
+  return `${negative && val.charAt(0) !== "-" ? "-" : ""}${val}`
     .replace(/(\.[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
     .replace(/[.]$/g, ""); // removes any trailing decimal point
 }

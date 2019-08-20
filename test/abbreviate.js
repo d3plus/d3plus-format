@@ -18,7 +18,8 @@ test("abbreviate", assert => {
   assert.equal("0.012", abbreviate(0.0123), "hundredths");
 
   assert.equal("-12.3k", abbreviate("-12345"), "string parsing");
-  assert.equal("-12.3k", abbreviate(-12345), "negatives");
+  assert.equal("-12.3k", abbreviate(-12345), "bigs negatives");
+  assert.equal("-12", abbreviate(-12), "small negatives");
 
   assert.equal("1B",    abbreviate(1000000009), "large - removes trailing zeros and period");
   assert.equal("0.1",   abbreviate(0.1), "small - removes trailing zeros");
