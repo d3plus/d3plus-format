@@ -32,6 +32,26 @@ export default {
     },
     currency: ["$", ""]
   },
+  "es-CL": {
+    separator: "",
+    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "MM", "B", "T", "Q", "Z", "Y"],
+    grouping: [3],
+    delimiters: {
+      thousands: ".",
+      decimal: ","
+    },
+    currency: ["$", ""]
+  },
+  "es-MX": {
+    separator: "",
+    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "MM", "B", "T", "Q", "Z", "Y"],
+    grouping: [3],
+    delimiters: {
+      thousands: ",",
+      decimal: "."
+    },
+    currency: ["$", ""]
+  },
   "es-ES": {
     separator: "",
     suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "mm", "b", "t", "q", "Q", "Z", "Y"],
@@ -41,16 +61,6 @@ export default {
       decimal: ","
     },
     currency: ["€", ""]
-  },
-  "es-CL": {
-    separator: "",
-    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "t", "q", "Q", "Z", "Y"],
-    grouping: [3],
-    delimiters: {
-      thousands: ".",
-      decimal: ","
-    },
-    currency: ["$", ""]
   },
   "et-EE": {
     separator: " ",
