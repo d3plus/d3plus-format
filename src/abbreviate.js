@@ -76,6 +76,7 @@ export default function(n, locale = "en-US", precision = undefined) {
   else val = d3plusFormatLocale.format(".3g")(n);
 
   return `${negative && val.charAt(0) !== "-" ? "-" : ""}${val}`
-    .replace(/(\.[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
-    .replace(/[.]$/g, ""); // removes any trailing decimal point
+    .replace(/(\.[0]*[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
+    .replace(/\.[0]*$/g, ""); // removes any trailing decimal point
+
 }

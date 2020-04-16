@@ -23,6 +23,7 @@ test("abbreviate", assert => {
 
   assert.equal("1B",    abbreviate(1000000009), "large - removes trailing zeros and period");
   assert.equal("0.1",   abbreviate(0.1), "small - removes trailing zeros");
+  assert.equal("0.01",   abbreviate(0.01), "small - removes trailing zeros");
 
   assert.equal("10 miljonit",    abbreviate(10000000, "et-EE"), "estonian locale");
   assert.equal("1,23 triljonit", abbreviate(1234567890000, "et-EE"), "trillion in estonian");
