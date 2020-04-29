@@ -5,7 +5,7 @@ test("abbreviate", assert => {
 
   assert.equal("1.23Q", abbreviate(1234567890000000000), "quintillion");
   assert.equal("1.23q", abbreviate(1234567890000000), "quadrillion");
-  assert.equal("1.23t", abbreviate(1234567890000), "trillion");
+  assert.equal("1.23T", abbreviate(1234567890000), "trillion");
   assert.equal("1.23B", abbreviate(1234567890), "billion");
   assert.equal("1.23M", abbreviate(1234567), "million");
   assert.equal("123k",  abbreviate(123456), "hundred thousand");
