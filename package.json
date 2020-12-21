@@ -27,7 +27,7 @@
     "url": "https://github.com/d3plus/d3plus-format/issues"
   },
   "dependencies": {
-    "d3-format": "^1.4.4"
+    "d3-format": "^1.4.5"
   },
   "keywords": [
     "d3",
