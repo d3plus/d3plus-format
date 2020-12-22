@@ -20,7 +20,7 @@ If you use NPM, run `npm install d3plus-format --save`. Otherwise, download the 
 * [formatAbbreviate](#formatAbbreviate) - An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
 
 The new specifier strings added by d3plus-format are:
- - `~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
+ - `.3~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
 * [formatDefaultLocale](#formatDefaultLocale) - An extension to d3's [formatDefaultLocale](https://github.com/d3/d3-format#api-reference) function that allows setting the locale globally for formatters.
 
 ##### 
@@ -58,7 +58,7 @@ This is a global function.
 An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
 
 The new specifier strings added by d3plus-format are:
- - `~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
+ - `.3~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
 
 
 This is a global function.
@@ -95,4 +95,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Tue, 22 Dec 2020 15:25:45 GMT</sub>
+###### <sub>Documentation generated on Tue, 22 Dec 2020 15:36:19 GMT</sub>
