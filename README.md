@@ -17,7 +17,7 @@ If you use NPM, run `npm install d3plus-format --save`. Otherwise, download the 
 
 ##### 
 * [formatAbbreviate](#formatAbbreviate) - Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
-* [formatAbbreviate](#formatAbbreviate) - An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
+* [format](#format) - An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
 
 The new specifier strings added by d3plus-format are:
  - `.3~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
@@ -52,8 +52,8 @@ This is a global function.
 
 ---
 
-<a name="formatAbbreviate"></a>
-#### d3plus.**formatAbbreviate**(specifier) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/format.js#L4)
+<a name="format"></a>
+#### d3plus.**format**(specifier) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/format.js#L4)
 
 An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
 
@@ -95,4 +95,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Tue, 22 Dec 2020 15:36:19 GMT</sub>
+###### <sub>Documentation generated on Tue, 22 Dec 2020 19:02:31 GMT</sub>
