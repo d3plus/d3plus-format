@@ -17,6 +17,8 @@ If you use NPM, run `npm install d3plus-format --save`. Otherwise, download the 
 
 ##### 
 * [formatAbbreviate](#formatAbbreviate) - Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
+* [formatAbbreviate](#formatAbbreviate) - An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
+* [formatDefaultLocale](#formatDefaultLocale) - An extension to d3's [formatDefaultLocale](https://github.com/d3/d3-format#api-reference) function that allows setting the locale globally for formatters.
 
 ##### 
 * [formatLocale](#formatLocale) - A set of default locale formatters used when assigning suffixes and currency in numbers.
@@ -47,6 +49,32 @@ This is a global function.
 
 ---
 
+<a name="formatAbbreviate"></a>
+#### d3plus.**formatAbbreviate**(specifier) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/format.js#L4)
+
+An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
+
+
+This is a global function.
+
+
+```js
+The new specifier strings added by d3plus-format are:
+ - `~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
+```
+
+---
+
+<a name="formatDefaultLocale"></a>
+#### d3plus.**formatDefaultLocale**(definition) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDefaultLocale.js#L4)
+
+An extension to d3's [formatDefaultLocale](https://github.com/d3/d3-format#api-reference) function that allows setting the locale globally for formatters.
+
+
+This is a global function.
+
+---
+
 <a name="formatLocale"></a>
 #### **formatLocale** [<>](https://github.com/d3plus/d3plus-format/blob/master/src/locale.js#L1)
 
@@ -67,4 +95,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Wed, 29 Apr 2020 20:21:03 GMT</sub>
+###### <sub>Documentation generated on Tue, 22 Dec 2020 15:23:00 GMT</sub>
