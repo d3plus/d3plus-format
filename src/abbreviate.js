@@ -7,8 +7,9 @@ const round = (x, n) =>
 /**
  * @private
 */
-function formatSuffix(value, precision, suffixes) {
+function formatSuffix(str, precision, suffixes) {
   let i = 0;
+  let value = parseFloat(str.replace("−", "-"), 10);
   if (value) {
     if (value < 0) value *= -1;
     i = 1 + Math.floor(1e-12 + Math.log(value) / Math.LN10);
@@ -75,7 +76,8 @@ export default function(n, locale = "en-US", precision = undefined) {
   else if (n < 1 && n > -1) val = d3plusFormatLocale.format(".2g")(n);
   else val = d3plusFormatLocale.format(".3g")(n);
 
-  return `${negative && val.charAt(0) !== "-" ? "-" : ""}${val}`
+  return `${negative && val.charAt(0) !== "−" ? "−" : ""}${val}`
+    .replace(/\−/g, "-") // replace new d3 default minus sign (−) to hyphen-minus (-)
     .replace(/(\.[0]*[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
     .replace(/\.[0]*$/g, ""); // removes any trailing decimal point
 

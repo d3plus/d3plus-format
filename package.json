@@ -27,7 +27,7 @@
     "url": "https://github.com/d3plus/d3plus-format/issues"
   },
   "dependencies": {
-    "d3-format": "^1.4.5"
+    "d3-format": "^2.0.0"
   },
   "keywords": [
     "d3",
@@ -36,7 +36,7 @@
     "number"
   ],
   "devDependencies": {
-    "d3plus-dev": "^0.7.9"
+    "d3plus-dev": "^1.0.1"
   },
   "module": "es/index",
   "jsnext:main": "es/index",
