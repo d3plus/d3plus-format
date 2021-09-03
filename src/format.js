@@ -1,4 +1,4 @@
-import abbreviate from "./abbreviate";
+import abbreviate from "./formatAbbreviate";
 import {format} from "d3-format";
 
 /**

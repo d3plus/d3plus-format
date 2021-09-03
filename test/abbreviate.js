@@ -1,5 +1,5 @@
 import {test} from "zora";
-import {default as abbreviate} from "../src/abbreviate.js";
+import {default as abbreviate} from "../src/formatAbbreviate";
 
 test("abbreviate", assert => {
 

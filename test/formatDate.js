@@ -1,5 +1,5 @@
 import {test} from "zora";
-import {default as formatDate} from "../src/formatDate.js";
+import {default as formatDate} from "../src/formatDate";
 
 test("formatDate", assert => {
 
