@@ -19,11 +19,12 @@ If you use NPM, `npm install d3plus-format`. Otherwise, download the [latest rel
 ## API Reference
 
 ##### 
-* [formatAbbreviate](#formatAbbreviate) - Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
 * [format](#format) - An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
 
 The new specifier strings added by d3plus-format are:
  - `.3~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
+* [formatAbbreviate](#formatAbbreviate) - Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
+* [formatDate](#formatDate) - A default set of date formatters, which takes into account both the interval in between in each data point but also the start/end data points.
 * [formatDefaultLocale](#formatDefaultLocale) - An extension to d3's [formatDefaultLocale](https://github.com/d3/d3-format#api-reference) function that allows setting the locale globally for formatters.
 
 ##### 
@@ -39,8 +40,21 @@ The new specifier strings added by d3plus-format are:
 
 ---
 
+<a name="format"></a>
+#### d3plus.**format**(specifier) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/format.js#L4)
+
+An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
+
+The new specifier strings added by d3plus-format are:
+ - `.3~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
+
+
+This is a global function.
+
+---
+
 <a name="formatAbbreviate"></a>
-#### d3plus.**formatAbbreviate**(n, locale) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/abbreviate.js#L38)
+#### d3plus.**formatAbbreviate**(n, locale) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatAbbreviate.js#L38)
 
 Formats a number to an appropriate number of decimal places and rounding, adding suffixes if applicable (ie. `1200000` to `"1.2M"`).
 
@@ -55,16 +69,19 @@ This is a global function.
 
 ---
 
-<a name="format"></a>
-#### d3plus.**format**(specifier) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/format.js#L4)
+<a name="formatDate"></a>
+#### d3plus.**formatDate**(d, dataArray) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L4)
 
-An extension to d3's [format](https://github.com/d3/d3-format#api-reference) function that adds more string formatting types and localizations.
-
-The new specifier strings added by d3plus-format are:
- - `.3~a` - abbreviated decimal notation with a numeric suffix (ie. "k", "M", "B", etc). This is an alias of the `formatAbbreviate` function.
+A default set of date formatters, which takes into account both the interval in between in each data point but also the start/end data points.
 
 
 This is a global function.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| d | <code>Date</code> | The date string to be formatted. |
+| dataArray | <code>Array</code> | The full array of ordered Date Objects. |
+
 
 ---
 
@@ -98,4 +115,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Tue, 02 Feb 2021 14:47:19 GMT</sub>
+###### <sub>Documentation generated on Fri, 03 Sep 2021 16:57:13 GMT</sub>
