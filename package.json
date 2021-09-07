@@ -28,8 +28,8 @@
   },
   "dependencies": {
     "d3-format": "^2.0.0",
-    "d3-time": "^3.0.0",
-    "d3-time-format": "^4.0.0"
+    "d3-time": "^2.1.1",
+    "d3-time-format": "^3.0.0"
   },
   "keywords": [
     "d3",
