@@ -1,6 +1,6 @@
 {
   "name": "d3plus-format",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Shorthand formatters for common number types.",
   "main": "build/d3plus-format.full.js",
   "scripts": {
