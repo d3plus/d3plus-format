@@ -15,6 +15,16 @@ test("formatDate", assert => {
   assert.equal("Jan 2, 2020", formatDate(days[0], days), "starting day includes month and year");
   assert.equal("6", formatDate(days[4], days), "middle day excludes month and year");
 
+  const quarters = [
+    new Date("03/31/1987"),
+    new Date("06/30/1987"),
+    new Date("09/30/1987"),
+    new Date("12/31/1987"),
+    new Date("03/31/1988")
+  ];
+
+  assert.equal("Q2 1987", formatDate(quarters[1], quarters), "quarterly data");
+
 });
 
 export default test;
