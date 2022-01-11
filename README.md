@@ -15,7 +15,6 @@ If you use NPM, `npm install d3plus-format`. Otherwise, download the [latest rel
 </script>
 ```
 
-
 ## API Reference
 
 ##### 
@@ -70,7 +69,7 @@ This is a global function.
 ---
 
 <a name="formatDate"></a>
-#### d3plus.**formatDate**(d, dataArray) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L4)
+#### d3plus.**formatDate**(d, dataArray) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L16)
 
 A default set of date formatters, which takes into account both the interval in between in each data point but also the start/end data points.
 
@@ -115,4 +114,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Tue, 07 Sep 2021 23:26:10 GMT</sub>
+###### <sub>Documentation generated on Tue, 11 Jan 2022 23:38:15 GMT</sub>
