@@ -25,10 +25,11 @@ export default function(d, dataArray) {
   const labelIndex = dataArray.indexOf(d);
   const c = dataArray[labelIndex + 1] || dataArray[labelIndex - 1];
 
-  const quarterSteps = dataArray.reduce((arr, d, i) => {
+  const steps = dataArray.reduce((arr, d, i) => {
     if (i) arr.push(monthDiff(dataArray[i - 1], d));
     return arr;
-  }, []).every(d => d >= 3 && !(d % 3));
+  }, []);
+  const quarterSteps = steps.find(s => s === 3) && steps.every(d => d >= 3 && !(d % 3));
   if (quarterSteps) return formatQuarterYear(d);
 
   return (timeSecond(d) < d ? formatMillisecond
