@@ -25,6 +25,6 @@ jobs:
       - name: Link d3plus-dev Scripts
         run: npm link
       - name: Run Headless Tests
-        run: xvfb-run --auto-servernum npm test
+        run: xvfb-run -a npm test
       - name: Cleanup xvfb pidx
         uses: bcomnes/cleanup-xvfb@v1
