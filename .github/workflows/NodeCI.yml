@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install Node v12
+      - name: Install Node v14
         uses: actions/setup-node@v3
         with:
-          node-version: '12'
+          node-version: '14'
       - name: Install Basic Fonts
         run: echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections && sudo apt-get install ttf-mscorefonts-installer
       - name: Install Dependencies
