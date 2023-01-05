@@ -15,14 +15,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'
       - name: Install Dependencies
         run: npm ci
-      - name: Link d3plus-dev Scripts
-        run: npm link
-      - name: Setup xvfb for screen 0
-        run: Xvfb :1 -screen 0 1600x1200x24 &
-      - name: Run Headless Tests
-        run: xvfb-run -a npm test
-        env:
-          DISPLAY: :1
+      - name: Run headless test
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: npm test
