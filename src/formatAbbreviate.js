@@ -1,5 +1,5 @@
 import {formatLocale} from "d3-format";
-import defaultLocale from "./locale";
+import defaultLocale from "./locale.js";
 
 const round = (x, n) =>
   parseFloat(Math.round(x * Math.pow(10, n)) / Math.pow(10, n)).toFixed(n);
@@ -77,7 +77,7 @@ export default function(n, locale = "en-US", precision = undefined) {
   else val = d3plusFormatLocale.format(".3g")(n);
 
   return `${negative && val.charAt(0) !== "−" ? "−" : ""}${val}`
-    .replace(/\−/g, "-") // replace new d3 default minus sign (−) to hyphen-minus (-)
+    .replace(/−/g, "-") // replace new d3 default minus sign (−) to hyphen-minus (-)
     .replace(/(\.[0]*[1-9]*)[0]*$/g, "$1") // removes any trailing zeros
     .replace(/\.[0]*$/g, ""); // removes any trailing decimal point
 

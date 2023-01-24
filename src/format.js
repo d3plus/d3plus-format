@@ -1,4 +1,4 @@
-import abbreviate from "./formatAbbreviate";
+import abbreviate from "./formatAbbreviate.js";
 import {format} from "d3-format";
 
 /**

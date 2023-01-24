@@ -11,18 +11,19 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: ${{ matrix.node-version }}
       - name: Install Dependencies
         run: npm ci
-      - name: "Ubuntu Xvfb"
-        run: |
-          export DISPLAY=:13.0
-          Xvfb :13 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-      - name: Run headless test
-        uses: GabrielBB/xvfb-action@v1
-        with:
-          run: npm test
+      - name: Lint Code
+        run: ./node_modules/.bin/eslint src test
+      - name: Run Tests
+        run: ./node_modules/.bin/mocha 'test/**/*-test.js'
