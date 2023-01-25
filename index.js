@@ -1,6 +1,6 @@
-export {default as format} from "./src/format";
-export {default as formatDefaultLocale} from "./src/formatDefaultLocale";
+export {default as format} from "./src/format.js";
+export {default as formatDefaultLocale} from "./src/formatDefaultLocale.js";
 
-export {default as formatAbbreviate} from "./src/formatAbbreviate";
-export {default as formatDate} from "./src/formatDate";
-export {default as formatLocale} from "./src/locale";
+export {default as formatAbbreviate} from "./src/formatAbbreviate.js";
+export {default as formatDate} from "./src/formatDate.js";
+export {default as formatLocale} from "./src/locale.js";

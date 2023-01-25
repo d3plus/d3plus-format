@@ -37,7 +37,7 @@
     "number"
   ],
   "devDependencies": {
-    "d3plus-dev": "^1.2.4"
+    "d3plus-dev": "^1.2.8"
   },
   "module": "es/index",
   "jsnext:main": "es/index",
