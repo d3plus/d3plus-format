@@ -27,9 +27,12 @@ it("formatDate", () => {
     new Date("06/30/1987"),
     new Date("09/30/1987"),
     new Date("12/31/1987"),
-    new Date("03/31/1988")
+    new Date("03/31/1988"),
+    new Date("06/30/1988")
   ];
 
-  assert.strictEqual("Q2 1987", formatDate(quarters[1], quarters), "quarterly data");
+  assert.strictEqual("Q1 1987", formatDate(quarters[0], quarters), "starting quarter includes year");
+  assert.strictEqual("Q2", formatDate(quarters[1], quarters), "middle quarter excludes year");
+  assert.strictEqual("Q2 1988", formatDate(quarters[quarters.length - 1], quarters), "ending quarter includes year");
 
 });
