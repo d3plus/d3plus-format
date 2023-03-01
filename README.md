@@ -77,7 +77,7 @@ This is a global function.
 ---
 
 <a name="formatDate"></a>
-#### d3plus.**formatDate**(d, dataArray) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L15)
+#### d3plus.**formatDate**(d, dataArray) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L16)
 
 A default set of date formatters, which takes into account both the interval in between in each data point but also the start/end data points.
 
@@ -122,4 +122,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Wed, 01 Mar 2023 20:43:37 GMT</sub>
+###### <sub>Documentation generated on Wed, 01 Mar 2023 21:34:10 GMT</sub>
