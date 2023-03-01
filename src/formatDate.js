@@ -1,8 +1,7 @@
 import {timeYear, timeMonth, timeDay, timeHour, timeMinute, timeSecond} from "d3-time";
 import {timeFormat} from "d3-time-format";
 
-const formatDay = timeFormat("%-d"),
-      formatHour = timeFormat("%I %p"),
+const formatHour = timeFormat("%I %p"),
       formatMillisecond = timeFormat(".%L"),
       formatMinute = timeFormat("%I:%M"),
       formatMonth = timeFormat("%b"),
@@ -23,6 +22,8 @@ const formatDay = timeFormat("%-d"),
 export default function(d, dataArray) {
 
   const labelIndex = dataArray.indexOf(d);
+  const firstOrLast = labelIndex === 0 || labelIndex === dataArray.length - 1;
+  const smallArray = dataArray.length <= 5;
   const c = dataArray[labelIndex + 1] || dataArray[labelIndex - 1];
 
   const steps = dataArray.reduce((arr, d, i) => {
@@ -32,13 +33,18 @@ export default function(d, dataArray) {
   const quarterSteps = steps.find(s => s === 3) && steps.every(d => d >= 3 && !(d % 3));
   if (quarterSteps) return formatQuarterYear(d);
 
-  return (timeSecond(d) < d ? formatMillisecond
+  return (
+    timeSecond(d) < d ? formatMillisecond
     : timeMinute(d) < d ? formatSecond
     : timeHour(d) < d ? formatMinute
-    : timeDay(d) < d ? labelIndex === 0 ? formatMonthDayYear : formatHour
-    : timeMonth(d) < d ? labelIndex === 0 ? formatMonthDayYear : neighborInInterval(d, c, timeDay) ? formatMonthDay : formatDay
-    : timeYear(d) < d ? labelIndex === 0 ? formatMonthYear : neighborInInterval(d, c, timeMonth) ? formatMonthDay : formatMonth
-    : neighborInInterval(d, c, timeYear) ? formatMonthYear : formatYear)(d);
+    : timeDay(d) < d || neighborInInterval(d, c, timeDay) // Hourly Data
+      ? firstOrLast || smallArray ? formatMonthDayYear : +timeMonth(d) === d ? formatMonthDay : formatHour
+    : timeMonth(d) < d || neighborInInterval(d, c, timeMonth) // Daily Data
+      ? +timeYear(d) === d || firstOrLast || smallArray ? formatMonthDayYear : formatMonthDay 
+    : timeYear(d) < d || neighborInInterval(d, c, timeYear) // Monthly Data
+      ? +timeYear(d) === d || firstOrLast || smallArray ? formatMonthYear : formatMonth 
+    : formatYear
+  )(d);
 
 }
 
@@ -65,5 +71,5 @@ function monthDiff(d1, d2) {
     @private
 */
 function neighborInInterval(d, comparitor, interval) {
-  return comparitor ? +interval.round(d) === +interval.round(+d + Math.abs(comparitor - d))  : false;
+  return comparitor ? +interval.round(d) === +interval.round(comparitor) : false;
 }
