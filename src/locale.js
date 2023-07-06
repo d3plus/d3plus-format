@@ -12,6 +12,16 @@
 */
 
 export default {
+  "ar-SA": {
+    separator: "",
+    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", " بالآلاف", " مليون", " مليار", " تريليون", " كوادريليون", " كوينتيليون", " سكستليون", "سبتيليون"],
+    grouping: [3],
+    delimiters: {
+      thousands: ",",
+      decimal: "."
+    },
+    currency: ["SAR ", ""]
+  },
   "en-GB": {
     separator: "",
     suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "T", "q", "Q", "Z", "Y"],
@@ -25,6 +35,16 @@ export default {
   "en-US": {
     separator: "",
     suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", "k", "M", "B", "T", "q", "Q", "Z", "Y"],
+    grouping: [3],
+    delimiters: {
+      thousands: ",",
+      decimal: "."
+    },
+    currency: ["$", ""]
+  },
+  "en-SA": {
+    separator: "",
+    suffixes: ["y", "z", "a", "f", "p", "n", "µ", "m", "", " thousand", " million", " billion", " trillion", " quadrillion", " quintillion", " sextillion", "septillion"],
     grouping: [3],
     delimiters: {
       thousands: ",",
