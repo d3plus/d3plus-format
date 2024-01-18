@@ -1,5 +1,52 @@
 import assert from "assert";
 import {default as formatDate} from "../src/formatDate.js";
+import {timeFormat, timeFormatDefaultLocale} from "d3-time-format";
+
+const spanish = {
+  dateTime: "%A, %e de %B de %Y, %X",
+  date: "%d/%m/%Y",
+  time: "%H:%M:%S",
+  quarter: "T",
+  periods: ["AM", "PM"],
+  days: [
+    "domingo",
+    "lunes",
+    "martes",
+    "miércoles",
+    "jueves",
+    "viernes",
+    "sábado"
+  ],
+  shortDays: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+  months: [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+  ],
+  shortMonths: [
+    "ene",
+    "feb",
+    "mar",
+    "abr",
+    "may",
+    "jun",
+    "jul",
+    "ago",
+    "sep",
+    "oct",
+    "nov",
+    "dic"
+  ]
+};
 
 it("formatDate", () => {
 
@@ -34,5 +81,8 @@ it("formatDate", () => {
   assert.strictEqual("Q1 1987", formatDate(quarters[0], quarters), "starting quarter includes year");
   assert.strictEqual("Q2", formatDate(quarters[1], quarters), "middle quarter excludes year");
   assert.strictEqual("Q2 1988", formatDate(quarters[quarters.length - 1], quarters), "ending quarter includes year");
+
+  timeFormatDefaultLocale(spanish);
+  assert.strictEqual("ago", formatDate(months[6], months, timeFormat), "custom timeFormat for localization");
 
 });

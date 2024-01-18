@@ -1,26 +1,27 @@
 import {timeYear, timeMonth, timeHour, timeMinute, timeSecond} from "d3-time";
 import {timeFormat} from "d3-time-format";
 
-const formatHour = timeFormat("%I %p"),
-      formatMillisecond = timeFormat(".%L"),
-      formatMinute = timeFormat("%I:%M"),
-      formatMonth = timeFormat("%b"),
-      formatMonthDay = timeFormat("%b %-d"),
-      formatMonthDayYear = timeFormat("%b %-d, %Y"),
-      formatMonthYear = timeFormat("%b %Y"),
-      formatQuarter = timeFormat("Q%q"),
-      formatQuarterYear = timeFormat("Q%q %Y"),
-      formatSecond = timeFormat(":%S"),
-      formatYear = timeFormat("%Y");
-
 /**
     @function formatDate
     @desc A default set of date formatters, which takes into account both the interval in between in each data point but also the start/end data points.
     @param {Date} d The date string to be formatted.
     @param {Array} dataArray The full array of ordered Date Objects.
+    @param {Function} [formatter = d3.timeFormat] An optional instance of d3.timeFormat to be used for localization.
     @returns {String}
 */
-export default function(d, dataArray) {
+export default function(d, dataArray, formatter = timeFormat) {
+
+  const formatHour = formatter("%I %p"),
+        formatMillisecond = formatter(".%L"),
+        formatMinute = formatter("%I:%M"),
+        formatMonth = formatter("%b"),
+        formatMonthDay = formatter("%b %-d"),
+        formatMonthDayYear = formatter("%b %-d, %Y"),
+        formatMonthYear = formatter("%b %Y"),
+        formatQuarter = formatter("Q%q"),
+        formatQuarterYear = formatter("Q%q %Y"),
+        formatSecond = formatter(":%S"),
+        formatYear = formatter("%Y");
 
   const labelIndex = dataArray.findIndex(a => +a === +d);
   const firstOrLast = labelIndex === 0 || labelIndex === dataArray.length - 1;
