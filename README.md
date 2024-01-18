@@ -77,17 +77,18 @@ This is a global function.
 ---
 
 <a name="formatDate"></a>
-#### d3plus.**formatDate**(d, dataArray) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L16)
+#### d3plus.**formatDate**(d, dataArray, [formatter]) [<>](https://github.com/d3plus/d3plus-format/blob/master/src/formatDate.js#L4)
 
 A default set of date formatters, which takes into account both the interval in between in each data point but also the start/end data points.
 
 
 This is a global function.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| d | <code>Date</code> | The date string to be formatted. |
-| dataArray | <code>Array</code> | The full array of ordered Date Objects. |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| d | <code>Date</code> |  | The date string to be formatted. |
+| dataArray | <code>Array</code> |  | The full array of ordered Date Objects. |
+| [formatter] | <code>function</code> | <code>d3.timeFormat</code> | An optional instance of d3.timeFormat to be used for localization. |
 
 
 ---
@@ -122,4 +123,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Wed, 19 Jul 2023 14:05:35 GMT</sub>
+###### <sub>Documentation generated on Thu, 18 Jan 2024 16:11:21 GMT</sub>
