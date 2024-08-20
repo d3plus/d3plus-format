@@ -100,5 +100,15 @@ export default {
       decimal: ","
     },
     currency: ["€", ""]
+  },
+  "zh-CN": {
+    separator: "",
+    suffixes: ["幺", "仄", "阿", "飞", "皮", "纳", "微", "毫", "", "千", "兆", "吉", "太", "拍", "艾", "泽", "尧"],
+    grouping: [3],
+    delimiters: {
+      thousands: ",",
+      decimal: "."
+    },
+    currency: ["¥", ""]
   }
 };
